@@ -42,24 +42,6 @@ async def on_ready():
 
 
 
-
-
-# @bot.event
-# async def on_message(message):
-#     response = [
-#     'as', 
-#     'cami mi lan burası',
-#     'selam canım', 
-#     'bak şuraya kimler gelmiş!',
-#     'Efendiler teşrif etmiş,as'
-# ]
-#     if message.author == bot.user:
-#         return
-
-#     if message.content == 'sa':
-#         await message.channel.send(f'{random.choice(response)}, {message.author.mention}')
-        
-
 @tasks.loop(seconds=10)
 async def change_status():
 	await bot.change_presence(

@@ -13,9 +13,9 @@ class adult(commands.Cog):
     @commands.command()
     async def prn(self, ctx):
         """Resim yada gif atar """
-        #channel = ctx.get_channel(791740048273440768) jacking
+        #channel = ctx.get_channel(791740048273440768) jacking   
         topıc = random.choice(REDDIT_ADULT)
-        if ctx.channel.id == ADULT_NSFW_CHANNEL_ID:
+        if ctx.channel.id == ADULT_NSFW_CHANNEL_ID:                     # ADULT_NSFW_CHANNEL_ID SORUN CIKARSA DİREKT CHANNEL_ID SİNİ BURAYA YAZIN
             async with ctx.channel.typing():
                 reddit = praw.Reddit(client_id=REDDIT_APP_ID,
                 client_secret=REDDIT_APP_SECRET,

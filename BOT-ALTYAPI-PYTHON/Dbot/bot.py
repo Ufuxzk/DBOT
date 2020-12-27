@@ -119,8 +119,8 @@ async def level(ctx,member: discord.Member = None):
       embed.set_author(name = member, icon_url = member.avatar_url)
 
       await ctx.send(embed = embed)
-
-@bot.command(aliases=['lb'])
+'''
+@bot.command(aliases=['lb'])          #Leaderboardda isimleri None olarak gösteriyor onu düzeltip kullanın.
 async def leaderboard(ctx, x=10):
   with open('users.json', 'r',encoding=('utf8')) as f:
     
@@ -161,7 +161,7 @@ async def leaderboard(ctx, x=10):
       index += 1
       
   await ctx.send(embed = em)
-
+'''
 
 def is_it_me(ctx):
     	return ctx.author.id ==  Owner

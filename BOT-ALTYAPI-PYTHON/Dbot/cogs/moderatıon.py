@@ -7,37 +7,13 @@ class moderation(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        # self.bot.handler = AntiSpamHandler(bot)
+
 
     
     @commands.Cog.listener()
     async def on_ready(self):
         print(f'Moderasyon komutları yüklendi!')
-    # @commands.Cog.listener()
-    # async def on_message(message):
-    #     self.bot.handler.propagate(message)
-    #     await bot.process_commands(message)
-
-    @commands.command()
-    @commands.has_permissions(kick_members=True)
-    async def kick(ctx, member: discord.Member, *, reason=None):
-        await member.kick(reason=reason)
-        await ctx.send(f'User {member} has kicked.', delete_after=5)
-    
-    @commands.command()
-    @commands.has_permissions(ban_members=True)
-    async def ban(self, ctx, member : discord.Member, *, reason=None):
-        check = False
-        for i in member.roles:
-            if i in ctx.author.roles[1:]:
-                check = True
-
-        if(check):
-            await ctx.send('Cant ban Moderators/Admins')
-        else:
-            await member.ban(reason=reason)
-            await ctx.send(f'{user.mention} has been banned!')
-
+ 
 
 
     
@@ -58,15 +34,6 @@ class moderation(commands.Cog):
 
 
 
-
-    # @commands.command()
-    # @commands.has_permissions(manage_channels=True)
-    # async def chlock(self, ctx, channel : discord.TextChannel=None):
-    #     channel = channel or ctx.channel
-    #     overwrite = channel.overwrites_for(ctx.guild.default_role)
-    #     overwrite.send_messages = False
-    #     await channel.set_permissions(ctx.guild.default_role, overwrite=overwrite)
-    #     await ctx.send('Channel locked.')
 
 def setup(bot):
     bot.add_cog(moderation(bot))

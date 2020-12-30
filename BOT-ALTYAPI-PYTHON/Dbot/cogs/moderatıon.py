@@ -20,7 +20,7 @@ class moderation(commands.Cog):
     @commands.command()
     @commands.has_permissions(kick_members=True)
     async def mute(self, ctx, member: discord.Member):
-        muted_role = ctx.guild.get_role(789868282034520064)
+        muted_role = ctx.guild.get_role(789868282034520064) # <--- buraya sunucunuzda bir MUTE ROLÜ BELİRLEYİN VE O ROLÜN İD'SİNİ GİRİN AYNI İD Yİ AŞAĞIDA Kİ UNMUTE İÇİNDE YAPIN.
         await member.add_roles(muted_role)
         await ctx.send(member.mention + {ctx.author} + " tarafından susturuldu!", delete_after=5)
         

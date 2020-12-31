@@ -31,7 +31,7 @@ bot = commands.Bot(command_prefix=Prefıx)
 status = cycle(['Spotify','!!yardım', '!!adulthelp', 'developed by ufuck',])
 # status = cycle(['Spotify','!!yardım', '!!adulthelp']) #BOTUN AKTİVİTE DURUMU  DEĞİŞTİREBİLİRSİNİZ
 bot.remove_command('help') # SİLME YARDIM KOMUTU ÇALIŞIR FAKAT DEFAULT HELP KOMUTU AKTİF OLUR
-
+admın = Owner
 
 
 @bot.event
@@ -164,7 +164,7 @@ async def leaderboard(ctx, x=10):
 '''
 
 def is_it_me(ctx):
-    	return ctx.author.id ==  Owner
+    	return admın
 
 
 @bot.command()
